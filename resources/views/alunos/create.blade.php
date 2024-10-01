@@ -13,8 +13,8 @@
                 <input type="email" name="email" class="form-control" id="email" required>
             </div>
             <div class="form-group mb-3">
-                <label for="idade" class="form-label">Idade</label>
-                <input type="number" name="idade" class="form-control" id="idade" required>
+                <label for="data_nascimento" class="form-label">Data de Nascimento</label>
+                <input type="date" name="data_nascimento" class="form-control" id="data_nascimento" required>
             </div>
             <div class="form-group mb-3">
                 <label for="endereco" class="form-label">Endereço</label>

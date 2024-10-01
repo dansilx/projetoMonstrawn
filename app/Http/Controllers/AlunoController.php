@@ -31,8 +31,8 @@ class AlunoController extends Controller
     {
         $request->validate([
             'nome' => 'required|string|max:255',
-            'email' => 'required|email|unique:alunos',
-            'idade' => 'required|integer|min:0',
+            'email' => 'required|email',
+            'data_nascimento' => 'required|date',
             'endereco' => 'required|string|max:255',
             'telefone' => 'required|string|max:15',
             'data_matricula' => 'required|date',

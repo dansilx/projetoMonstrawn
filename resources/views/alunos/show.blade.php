@@ -6,7 +6,7 @@
             <div class="card-body">
                 <h5 class="card-title"><strong>Nome:</strong> {{ $aluno->nome }}</h5>
                 <p class="card-text"><strong>E-mail:</strong> {{ $aluno->email }}</p>
-                <p class="card-text"><strong>Idade:</strong> {{ $aluno->idade }}</p>
+                <p class="card-text"><strong>Data de Nascimento:</strong> {{ $aluno->data_nascimento }}</p>
                 <p class="card-text"><strong>Endereço:</strong> {{ $aluno->endereco }}</p>
                 <p class="card-text"><strong>Telefone:</strong> {{ $aluno->telefone }}</p>
             </div>
