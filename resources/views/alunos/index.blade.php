@@ -3,7 +3,7 @@
         <h1 class="display-4">Lista de Alunos</h1>
 
         <!-- Botão para adicionar novo aluno -->
-        <a href="{{ route('alunos.create') }}" class="btn btn-outline-secondary mb-3">
+        <a href="/alunos/create" class="btn btn-outline-secondary mb-3">
             Cadastrar Novo Aluno
         </a>
 

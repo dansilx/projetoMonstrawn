@@ -29,18 +29,9 @@ class AlunoController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
-            'nome' => 'required|string|max:255',
-            'email' => 'required|email',
-            'data_nascimento' => 'required|date',
-            'endereco' => 'required|string|max:255',
-            'telefone' => 'required|string|max:15',
-            'data_matricula' => 'required|date',
-        ]);
-
         Aluno::create($request->all());
 
-        return redirect()->route('alunos.index')->with('success', 'Aluno cadastrado com sucesso.');
+        return redirect('/alunos');
     }
 
     /**

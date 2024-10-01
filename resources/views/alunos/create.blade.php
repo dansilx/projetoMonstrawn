@@ -2,7 +2,7 @@
     <div class="container mt-5">
         <h1 class="display-4">Cadastrar Novo Aluno</h1>
 
-        <form action="{{ route('alunos.store') }}" method="POST">
+        <form action="/alunos" method="POST">
             @csrf
             <div class="form-group mb-3">
                 <label for="nome" class="form-label">Nome</label>
@@ -25,7 +25,7 @@
                 <input type="text" name="telefone" class="form-control" id="telefone">
             </div>
             <button type="submit" class="btn btn-outline-secondary">Cadastrar</button>
-            <a href="{{ route('alunos.index') }}" class="btn btn-secondary">Voltar</a>
+            <a href="/alunos" class="btn btn-secondary">Voltar</a>
         </form>
     </div>
 </x-app-layout>
