@@ -12,19 +12,19 @@
     <div class="col-md-4">
         <div class="card">
             <div class="card-body">
-                <h5 class="card-title text-center mb-4">Login</h5>
+                <h5 class="card-title text-center mb-4">Vem Monxxtro! &#128170; </h5>
                 <form method="post" action="/login">
                     @CSRF
                     <div class="mb-3">
-                        <label for="email" class="form-label">Email</label>
+                        <label for="email" class="form-label">amorcomsuco@fakenatty.com???</label>
                         <input name="email" type="email" class="form-control" id="email" placeholder="Digite seu email">
                     </div>
                     <div class="mb-3">
-                        <label for="password" class="form-label">Senha</label>
+                        <label for="password" class="form-label">1234trembolona???</label>
                         <input name="password" type="password" class="form-control" id="password" placeholder="Digite sua senha">
                     </div>
                     <div class="d-grid">
-                        <button type="submit" class="btn btn-primary">Entrar</button>
+                        <button type="submit" class="btn btn-danger">BIIIIIIRRRRRRLLLLL</button>
                     </div>
                 </form>
                 @if ($errors->any())

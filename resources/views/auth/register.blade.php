@@ -12,27 +12,27 @@
     <div class="col-md-4">
         <div class="card">
             <div class="card-body">
-                <h5 class="card-title text-center mb-4">Registrar</h5>
+                <h5 class="card-title text-center mb-4">Trilhe aqui seu caminho de campeão de verdade!</h5>
                 <form method="post" action="/register">
                     @CSRF
                     <div class="mb-3">
-                        <label for="name" class="form-label">Nome</label>
+                        <label for="name" class="form-label">Como chama o frango?</label>
                         <input type="text" class="form-control" id="name" placeholder="Digite seu nome" name="name">
                     </div>
                     <div class="mb-3">
-                        <label for="email" class="form-label">Email</label>
+                        <label for="email" class="form-label">frango@treinafofo.com?</label>
                         <input type="email" class="form-control" id="email" placeholder="Digite seu email" name="email">
                     </div>
                     <div class="mb-3">
-                        <label for="password" class="form-label">Senha</label>
+                        <label for="password" class="form-label">frango123?</label>
                         <input type="password" class="form-control" id="password" placeholder="Digite sua senha" name="password">
                     </div>
                     <div class="mb-3">
-                        <label for="password_confirmation" class="form-label">Confirme a Senha</label>
+                        <label for="password_confirmation" class="form-label">Digita aqui de novo, tá com o dedo mole?!</label>
                         <input type="password" class="form-control" id="password_confirmation" placeholder="Confirme sua senha" name="password_confirmation">
                     </div>
                     <div class="d-grid">
-                        <button type="submit" class="btn btn-primary">Registrar</button>
+                        <button type="submit" class="btn btn-danger">&#128293;TÁ VINDO O MONXXTRO&#128293;</button>
                     </div>
                 </form>
                 @if ($errors->any())

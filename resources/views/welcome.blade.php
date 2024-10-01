@@ -30,17 +30,17 @@
     <div class="col-md-4">
         <div class="card shadow-lg">
             <div class="card-body">
-                <h5 class="card-title text-center">Sistema de Controle de Estoque</h5>
+                <h5 class="card-title text-center">Bem-Vindo Monxxtro &#127947; </h5>
                 @auth
                     <a href="/dashboard" class="btn btn-primary">
                         Acessar área restrita
                     </a>
                 @else
                     <a href="/login" class="btn btn-primary">
-                        Acessar o sistema
+                        &#129355; Dojo dos Fake Nattys  
                     </a>
                     <a href="/register" class="btn btn-primary">
-                        Crie sua conta
+                        &#128020; Quero fazer amor com o Suco
                     </a>
                 @endauth
             </div>
