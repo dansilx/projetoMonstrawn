@@ -2,10 +2,10 @@
     <div class="container mx-auto">
         <h1 class="text-2xl font-bold mb-4">Lista de Alunos</h1>
 
-        <a href="{{ route('alunos.create') }}" class="bg-blue-500 text-white px-4 py-2 rounded">Cadastrar Novo Aluno</a>
+        <a href="{{ route('alunos.create') }}" class="bg-blue-500 text-black px-4 py-2 rounded">Cadastrar Novo Aluno</a>
 
         @if(session('success'))
-            <div class="bg-green-500 text-white p-2 mt-4 rounded">
+            <div class="bg-green-500 text-black p-2 mt-4 rounded">
                 {{ session('success') }}
             </div>
         @endif
