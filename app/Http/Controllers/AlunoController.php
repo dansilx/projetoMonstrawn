@@ -55,7 +55,17 @@ class AlunoController extends Controller
      */
     public function update(Request $request, Aluno $aluno)
     {
-        //
+        $request->validate([
+            'nome' => 'required',
+            'email' => 'required',
+            'data_nascimento' => 'required',
+            'endereco' => 'required',
+            'telefone' => 'required',
+            'data_matricula' => 'required',
+        ]);
+
+        $aluno->update($request->all());
+        return redirect()->route('alunos.index')->with('success', 'Aluno atualizado!');
     }
 
     /**
@@ -63,6 +73,7 @@ class AlunoController extends Controller
      */
     public function destroy(Aluno $aluno)
     {
-        //
+        $aluno->delete();
+        return redirect()->route('alunos.index')->with('success', 'Aluno deletado com sucesso');
     }
 }
