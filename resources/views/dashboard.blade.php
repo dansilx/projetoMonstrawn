@@ -10,16 +10,14 @@
       function drawChart() {
 
         var data = google.visualization.arrayToDataTable([
-          ['Atividades', 'Quantidade Vendida'],
-          ['Tirar Foto "Tá Pago"',     13],
-          ['Utilizar equipamento errado',      2],
-          ['Ficar Impressionante',  1],
-          ['Dar em cima de Casadas', 2],
-          ['Ficar de Conversinha',    6]
+          ['Alunos', 'Valor Médio dos Alunos da Academia'],
+          @foreach($alunos as $index => $aluno)
+            ["{{$aluno}}", {{$valores_medios[$index]}}]
+          @endforeach
         ]);
 
         var options = {
-          title: 'O que as pessoas fazem na Academia'
+          title: 'Análise de Alunos e seu Valor Médio'
         };
 
         var chart = new google.visualization.PieChart(document.getElementById('piechart'));
