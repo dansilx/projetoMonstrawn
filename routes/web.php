@@ -21,6 +21,7 @@ Route::middleware('auth')->group(function () {
     Route::get('alunos/{id}/delete', [AlunoController::class, 'delete'])->name('alunos.delete');
     Route::resource('professors', ProfessorController::class);
     Route::resource('planos', PlanoController::class);
+    Route::resource('matriculas', PlanoController::class);
 });
 
 require __DIR__.'/auth.php';
