@@ -46,7 +46,6 @@ class PlanoController extends Controller
      */
     public function show(Plano $plano)
     {
-        $plano = Plano::findOrFail($id);
         return view('plano.show', compact('plano'));
     }
 
@@ -55,7 +54,6 @@ class PlanoController extends Controller
      */
     public function edit(Plano $plano)
     {
-        $plano = Plano::findOrFail($id);
         return view('plano.edit', compact('plano'));
     }
 
@@ -71,7 +69,6 @@ class PlanoController extends Controller
             'duracao' => 'required|integer|min:1',
         ]);
 
-        $plano = Plano::findOrFail($id);
         $plano->update($validatedData);
 
         return redirect('/planos')->with('success', 'Plano atualizado com sucesso!');
@@ -82,7 +79,6 @@ class PlanoController extends Controller
      */
     public function destroy(Plano $plano)
     {
-        $plano = Plano::findOrFail($id);
         $plano->delete();
 
         return redirect('/planos')->with('success', 'Plano excluído com sucesso!');
