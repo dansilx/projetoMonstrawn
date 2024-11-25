@@ -30,11 +30,11 @@
                         <td>{{ $aluno->email }}</td>
                         <td>
                             <!-- Botão de detalhes -->
-                            <a href="{{ route('alunos.show', $aluno->id) }}" class="btn btn-info btn-sm">Ver</a>
+                            <a href="/alunos/show" class="btn btn-info btn-sm">Ver</a>
                             <!-- Botão de edição -->
-                            <a href="{{ route('alunos.edit', $aluno->id) }}" class="btn btn-warning btn-sm">Editar</a>
+                            <a href="/alunos/edit" class="btn btn-warning btn-sm">Editar</a>
                             <!-- Formulário de exclusão -->
-                            <form action="{{ route('alunos.destroy', $aluno->id) }}" method="POST" class="d-inline">
+                            <form action="/alunos/destroy" method="POST" class="d-inline">
                                 @csrf
                                 @method('DELETE')
                                 <button type="submit" class="btn btn-danger btn-sm">Excluir</button>

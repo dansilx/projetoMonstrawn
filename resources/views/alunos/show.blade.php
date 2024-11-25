@@ -13,9 +13,9 @@
         </div>
 
         <!-- Botões de ações -->
-        <a href="{{ route('alunos.index') }}" class="btn btn-outline-dark">Voltar para Lista de Alunos</a>
-        <a href="{{ route('alunos.edit', $aluno->id) }}" class="btn btn-warning ml-2">Editar Aluno</a>
-        <form action="{{ route('alunos.destroy', $aluno->id) }}" method="POST" class="d-inline ml-2">
+        <a href="/alunos/index" class="btn btn-outline-dark">Voltar para Lista de Alunos</a>
+        <a href="/alunos/edit" class="btn btn-warning ml-2">Editar Aluno</a>
+        <form action="/alunos/destroy" method="POST" class="d-inline ml-2">
             @csrf
             @method('DELETE')
             <button type="submit" class="btn btn-danger">Deletar Aluno</button>
