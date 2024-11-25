@@ -13,6 +13,11 @@ return new class extends Migration
     {
         Schema::create('matriculas', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('aluno_id')->constrained()->onDelete('cascade');
+            $table->foreignId('professor_id')->constrained()->onDelete('cascade');
+            $table->foreignId('plano_id')->constrained()->onDelete('cascade');
+            $table->date('data_matricula');
+            $table->string('status')->default('ativa'); 
             $table->timestamps();
         });
     }

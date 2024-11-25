@@ -12,7 +12,8 @@ class MatriculaController extends Controller
      */
     public function index()
     {
-        //
+        $matriculas = Matricula::with(['aluno', 'professor', 'plano'])->get();
+        return view('matricula.index', compact('matriculas'));
     }
 
     /**
@@ -20,7 +21,10 @@ class MatriculaController extends Controller
      */
     public function create()
     {
-        //
+        $alunos = Aluno::all();
+        $professores = Professor::all();
+        $planos = Plano::all();
+        return view('matricula.create', compact('alunos', 'professores', 'planos'));
     }
 
     /**
@@ -28,7 +32,16 @@ class MatriculaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'aluno_id' => 'required|exists:alunos,id',
+            'professor_id' => 'required|exists:professores,id',
+            'plano_id' => 'required|exists:planos,id',
+            'data_matricula' => 'required|date',
+        ]);
+
+        Matricula::create($request->all());
+
+        return redirect()->route('matriculas.index');
     }
 
     /**
@@ -36,7 +49,7 @@ class MatriculaController extends Controller
      */
     public function show(Matricula $matricula)
     {
-        //
+        return view('matricula.show', compact('matricula'));
     }
 
     /**
@@ -44,7 +57,10 @@ class MatriculaController extends Controller
      */
     public function edit(Matricula $matricula)
     {
-        //
+        $alunos = Aluno::all();
+        $professores = Professor::all();
+        $planos = Plano::all();
+        return view('matricula.edit', compact('matricula', 'alunos', 'professores', 'planos'));
     }
 
     /**
@@ -52,7 +68,16 @@ class MatriculaController extends Controller
      */
     public function update(Request $request, Matricula $matricula)
     {
-        //
+        $request->validate([
+            'aluno_id' => 'required|exists:alunos,id',
+            'professor_id' => 'required|exists:professores,id',
+            'plano_id' => 'required|exists:planos,id',
+            'data_matricula' => 'required|date',
+        ]);
+
+        $matricula->update($request->all());
+
+        return redirect()->route('matriculas.index');
     }
 
     /**
@@ -60,6 +85,8 @@ class MatriculaController extends Controller
      */
     public function destroy(Matricula $matricula)
     {
-        //
+        $matricula->delete();
+
+        return redirect()->route('matriculas.index');
     }
 }
