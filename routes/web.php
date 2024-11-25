@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\ProfessorController;
 use App\Http\Controllers\PlanoController;
+use App\Http\Controllers\MatriculaController;
 
 Route::get('/', function () {
     return view('welcome');
