@@ -2,7 +2,7 @@
     <div class="container mt-5">
         <h1 class="display-4">Editar Aluno</h1>
 
-        <form action="/alunos/update" method="POST">
+        <form action="/alunos/{{$aluno->id}}" method="POST">
             @csrf
             @method('PUT')
             <div class="form-group mb-3">

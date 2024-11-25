@@ -15,7 +15,7 @@
         <!-- Botões de ações -->
         <a href="/alunos/index" class="btn btn-outline-dark">Voltar para Lista de Alunos</a>
         <a href="/alunos/edit" class="btn btn-warning ml-2">Editar Aluno</a>
-        <form action="/alunos/destroy" method="POST" class="d-inline ml-2">
+        <form action="/alunos/{{$aluno->id}}/destroy" method="POST" class="d-inline ml-2">
             @csrf
             @method('DELETE')
             <button type="submit" class="btn btn-danger">Deletar Aluno</button>
