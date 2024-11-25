@@ -5,6 +5,7 @@ use App\Http\Controllers\AlunoController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\ProfessorController;
+use App\Http\Controllers\PlanoController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -19,6 +20,7 @@ Route::middleware('auth')->group(function () {
     Route::resource('alunos', AlunoController::class);
     Route::get('alunos/{id}/delete', [AlunoController::class, 'delete'])->name('alunos.delete');
     Route::resource('professors', ProfessorController::class);
+    Route::resource('planos', PlanoController::class);
 });
 
 require __DIR__.'/auth.php';
