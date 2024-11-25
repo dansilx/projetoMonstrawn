@@ -26,7 +26,7 @@
                 <input type="text" name="telefone" class="form-control" id="telefone" value="{{ $aluno->telefone }}">
             </div>
             <button type="submit" class="btn btn-success">Salvar Alterações</button>
-            <a href="{{ route('alunos.index') }}" class="btn btn-secondary ml-2">Voltar para Lista de Alunos</a>
+            <a href="/alunos/index" class="btn btn-secondary ml-2">Voltar para Lista de Alunos</a>
         </form>
     </div>
 </x-app-layout>
