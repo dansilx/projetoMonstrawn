@@ -10,7 +10,7 @@ class DashboardController extends Controller
 {
     public function gerarGrafico() 
     {
-        $data = Aluno::select('professor_id', DB::raw('AVG(VALOR) AS valor_medio'))
+        /*$data = Aluno::select('professor_id', DB::raw('AVG(VALOR) AS valor_medio'))
                         ->with('aluno')
                         ->groupBy('professor_id')
                         ->get();
@@ -22,9 +22,10 @@ class DashboardController extends Controller
         {
             $alunos[] = $linha->alunos->nome;
             $valores_medios[] = $linha->valor_medio;
-        }
+        }*/
 
-        return view('dashboard', compact('alunos', 'valores_medios'));
+        //return view('dashboard', compact('alunos', 'valores_medios'));
+        return view('dashboard');
 
     }
 }
