@@ -14,13 +14,13 @@
         </div>
 
         <div class="mt-3">
-            <a href="{{ route('planos.edit', $plano->id) }}" class="btn btn-warning">Editar</a>
-            <form action="{{ route('planos.destroy', $plano->id) }}" method="POST" class="d-inline">
+            {{-- <a href="/planos/{{$plano->id}}/edit" class="btn btn-outline-warning">Editar</a> --}}
+            <form action="/planos/{{ $plano->id }}" method="POST" class="d-inline">
                 @csrf
                 @method('DELETE')
-                <button type="submit" class="btn btn-danger">Excluir</button>
+                <button type="submit" class="btn btn-outline-danger">Excluir</button>
             </form>
-            <a href="{{ route('planos.index') }}" class="btn btn-secondary">Voltar</a>
+            <a href="/planos" class="btn btn-secondary">Voltar</a>
         </div>
     </div>
 </x-app-layout>

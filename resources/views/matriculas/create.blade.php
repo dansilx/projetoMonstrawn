@@ -17,7 +17,7 @@
             <div class="form-group mb-3">
                 <label for="professor_id">Professor</label>
                 <select name="professor_id" id="professor_id" class="form-control" required>
-                    @foreach ($professores as $professor)
+                    @foreach ($professors as $professor)
                         <option value="{{ $professor->id }}">{{ $professor->nome }}</option>
                     @endforeach
                 </select>
@@ -38,7 +38,7 @@
             </div>
 
             <button type="submit" class="btn btn-outline-secondary">Cadastrar</button>
-            <a href="/professors" class="btn btn-secondary">Voltar</a>
+            <a href="/matriculas" class="btn btn-secondary">Voltar</a>
         </form>
     </div>
 </x-app-layout>

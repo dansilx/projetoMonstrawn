@@ -2,7 +2,7 @@
     <div class="container mt-5">
         <h1 class="display-4">Editar Matrícula</h1>
 
-        <form action="{{ route('matriculas.update', $matricula->id) }}" method="POST">
+        <form action="/matriculas/{{ $matricula->id }}" method="POST">
             @csrf
             @method('PUT')
 
@@ -20,7 +20,7 @@
             <div class="form-group mb-3">
                 <label for="professor_id">Professor</label>
                 <select name="professor_id" id="professor_id" class="form-control" required>
-                    @foreach ($professores as $professor)
+                    @foreach ($professors as $professor)
                         <option value="{{ $professor->id }}" {{ $professor->id == $matricula->professor_id ? 'selected' : '' }}>
                             {{ $professor->nome }}
                         </option>

@@ -21,7 +21,7 @@ class ProfessorController extends Controller
      */
     public function create()
     {
-        return view('professors.create');
+        return view('professors.create', compact('professors'));
     }
 
     /**

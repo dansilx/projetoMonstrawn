@@ -46,7 +46,7 @@ class PlanoController extends Controller
      */
     public function show(Plano $plano)
     {
-        return view('planos.show', compact('planos'));
+        return view('planos.show', compact('plano'));
     }
 
     /**
@@ -54,7 +54,7 @@ class PlanoController extends Controller
      */
     public function edit(Plano $plano)
     {
-        return view('planos.edit', compact('planos'));
+        return view('planos.edit', compact('plano'));
     }
 
     /**

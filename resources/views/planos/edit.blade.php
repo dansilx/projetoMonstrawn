@@ -23,7 +23,7 @@
                 <input type="number" name="duracao" id="duracao" class="form-control" value="{{ old('duracao', $plano->duracao) }}" required>
             </div>
 
-            <button type="submit" class="btn btn-primary">Atualizar</button>
+            <button type="submit" class="btn btn-outline-secondary">Atualizar</button>
             <a href="{{ route('planos.index') }}" class="btn btn-secondary">Voltar</a>
         </form>
     </div>

@@ -21,13 +21,13 @@
                         <td>R$ {{ number_format($plano->valor, 2, ',', '.') }}</td>
                         <td>{{ $plano->duracao }}</td>
                         <td>
-                            <a href="/planos.show{{$plano->id}}/show" class="btn btn-info btn-sm">Ver</a>
-                            <a href="/planos.show{{$plano->id}}/edit" class="btn btn-warning btn-sm">Editar</a>
-                            <form action="/planos.show{{$plano->id}}/destroy" method="POST" class="d-inline">
+                            <a href="/planos/{{$plano->id}}" class="btn btn-outline-info btn-sm">Ver</a>
+                            <a href="/planos/{{$plano->id}}/edit" class="btn btn-outline-warning btn-sm">Editar</a>
+                            {{-- <form action="/planos.show{{$plano->id}}/destroy" method="POST" class="d-inline">
                                 @csrf
                                 @method('DELETE')
                                 <button type="submit" class="btn btn-danger btn-sm">Excluir</button>
-                            </form>
+                            </form> --}}
                         </td>
                     </tr>
                 @endforeach

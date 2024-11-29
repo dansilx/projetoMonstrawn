@@ -2,7 +2,7 @@
     <div class="container mt-5">
         <h1 class="display-4">Lista de Professores</h1>
 
-        <!-- Botão para adicionar novo aluno -->
+        <!-- Botão para adicionar novo professor -->
         <a href="/professors/create" class="btn btn-outline-secondary mb-3">
             Cadastrar Novo Professor
         </a>
@@ -30,15 +30,15 @@
                         <td>{{ $professor->email }}</td>
                         <td>
                             <!-- Botão de detalhes -->
-                            <a href="/professors/{{$professor->id}}/show" class="btn btn-info btn-sm">Ver</a>
+                            <a href="/professors/{{$professor->id}}" class="btn btn-outline-info btn-sm">Ver</a>
                             <!-- Botão de edição -->
-                            <a href="/professors/{{$professor->id}}/edit" class="btn btn-warning btn-sm">Editar</a>
+                            <a href="/professors/{{$professor->id}}/edit" class="btn btn-outline-warning btn-sm">Editar</a>
                             <!-- Formulário de exclusão -->
-                            <form action="/professors/{{$professor->id}}/destroy" method="POST" class="d-inline">
+                            {{-- <form action="{{ route('professors.destroy', $professor->id) }}" method="POST" class="d-inline">
                                 @csrf
                                 @method('DELETE')
                                 <button type="submit" class="btn btn-danger btn-sm">Excluir</button>
-                            </form>
+                            </form> --}}
                         </td>
                     </tr>
                 @endforeach
