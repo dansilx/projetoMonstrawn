@@ -10,10 +10,11 @@ class DashboardController extends Controller
 {
     public function gerarGrafico()
     {
-        $data = Matricula::select('aluno_id', DB::raw('AVG(valor) AS valor_medio'))
-                        ->with('aluno')
-                        ->groupBy('aluno_id')
-                        ->get();
+        $data = Matricula::select('aluno_id')
+            ->join('planos', 'matriculas.plano_id', '=', 'planos.id')
+            ->selectRaw('AVG(planos.valor) AS valor_medio')
+            ->groupBy('aluno_id')
+            ->get();
 
         $matriculas = [];
         $valores_medios = [];

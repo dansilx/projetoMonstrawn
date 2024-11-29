@@ -39,7 +39,7 @@ class AlunoController extends Controller
      */
     public function show(Aluno $aluno)
     {
-        return view('alunos.show', compact('alunos'));
+        return view('alunos.show', compact('aluno'));
     }
 
     /**
@@ -47,7 +47,7 @@ class AlunoController extends Controller
      */
     public function edit(Aluno $aluno)
     {
-        return view('alunos.edit', compact('alunos'));
+        return view('alunos.edit', compact('aluno'));
     }
 
     /**

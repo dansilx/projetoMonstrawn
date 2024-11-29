@@ -17,4 +17,15 @@ class Aluno extends Model
         'telefone',
         'data_matricula',
     ];
+
+    protected static function boot()
+    {
+        parent::boot();
+
+        static::creating(function ($aluno) {
+            if (is_null($aluno->data_matricula)) {
+                $aluno->data_matricula = now()->toDateString(); // Define a data atual
+            }
+        });
+    }
 }

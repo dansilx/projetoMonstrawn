@@ -1,24 +1,67 @@
 <x-app-layout>
-    <div class="container mt-5">
-        <h1 class="display-4">Detalhes do Aluno</h1>
 
-        <div class="card mb-4">
-            <div class="card-body">
-                <h5 class="card-title"><strong>Nome:</strong> {{ $aluno->nome }}</h5>
-                <p class="card-text"><strong>E-mail:</strong> {{ $aluno->email }}</p>
-                <p class="card-text"><strong>Data de Nascimento:</strong> {{ $aluno->data_nascimento }}</p>
-                <p class="card-text"><strong>Endereço:</strong> {{ $aluno->endereco }}</p>
-                <p class="card-text"><strong>Telefone:</strong> {{ $aluno->telefone }}</p>
+    <h5>Excluir Aluno</h5>
+
+    <form action="/alunos/{{ $aluno->id }}" method="POST">
+        @csrf
+        @method('DELETE')
+
+        <div class="row">
+            <div class="col">
+                <label for="nome" class="form-label">Nome do Aluno:</label>
+                <input type="text" name="nome" class="form-control"
+                    value="{{ $aluno->nome }}" disabled />
             </div>
         </div>
 
-        <!-- Botões de ações -->
-        <a href="/alunos/index" class="btn btn-outline-dark">Voltar para Lista de Alunos</a>
-        <a href="/alunos/edit" class="btn btn-warning ml-2">Editar Aluno</a>
-        <form action="/alunos/{{$aluno->id}}/destroy" method="POST" class="d-inline ml-2">
-            @csrf
-            @method('DELETE')
-            <button type="submit" class="btn btn-danger">Deletar Aluno</button>
-        </form>
-    </div>
+        <div class="row mt-3">
+            <div class="col">
+                <label for="email" class="form-label">E-mail:</label>
+                <input type="text" name="email" class="form-control"
+                    value="{{ $aluno->email }}" disabled />
+            </div>
+        </div>
+
+        <div class="row mt-3">
+            <div class="col">
+                <label for="data_nascimento" class="form-label">Data de Nascimento:</label>
+                <input type="text" name="data_nascimento" class="form-control"
+                    value="{{ $aluno->data_nascimento }}" disabled />
+            </div>
+        </div>
+
+        <div class="row mt-3">
+            <div class="col">
+                <label for="endereco" class="form-label">Endereço:</label>
+                <input type="text" name="endereco" class="form-control"
+                    value="{{ $aluno->endereco }}" disabled />
+            </div>
+        </div>
+
+        <div class="row mt-3">
+            <div class="col">
+                <label for="telefone" class="form-label">Telefone:</label>
+                <input type="text" name="telefone" class="form-control"
+                    value="{{ $aluno->telefone }}" disabled />
+            </div>
+        </div>
+
+        <div class="row mt-3">
+            <div class="col">
+                <label for="data_matricula" class="form-label">Data da Matrícula:</label>
+                <input type="text" name="data_matricula" class="form-control"
+                    value="{{ $aluno->data_matricula }}" disabled />
+            </div>
+        </div>
+
+        <div class="row mt-4">
+            <div class="col">
+                <button type="submit" class="btn btn-outline-danger">
+                    Excluir
+                </button>
+                <a href="/alunos" class="btn btn-secondary ml-2">Voltar</a>
+            </div>
+        </div>
+    </form>
+
 </x-app-layout>
