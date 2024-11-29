@@ -21,7 +21,7 @@ class ProfessorController extends Controller
      */
     public function create()
     {
-        return view('professors.create', compact('professors'));
+        return view('professors.create');
     }
 
     /**
@@ -60,18 +60,14 @@ class ProfessorController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Professor $professor)
+    public function update(Request $request, string $id)
     {
-        $request->validate([
-            'nome' => 'required|string|max:255',
-            'email' => 'required|email|unique:professors,email,' . $professor->id,
-            'especialidade' => 'required|string|max:255',
-            'data_admissao' => 'required|date',
-        ]);
+
+        $professor = Professor::findOrFail($id);
 
         $professor->update($request->all());
 
-        return redirect()->route('professors.index')->with('success', 'Professor atualizado com sucesso.');
+        return redirect("/professors");
     }
 
     /**

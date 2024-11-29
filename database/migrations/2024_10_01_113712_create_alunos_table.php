@@ -18,7 +18,7 @@ return new class extends Migration
             $table->date('data_nascimento');
             $table->string('endereco');
             $table->string('telefone');
-            $table->date('data_matricula')->default(new Date());
+            $table->date('data_matricula')->default(DB::raw('CURRENT_DATE'));
             $table->timestamps();
         });
     }
@@ -28,9 +28,9 @@ return new class extends Migration
      */
     public function down(): void
     {
-        //Schema::dropIfExists('alunos');
-        // Schema::table('alunos', function (Blueprint $table) {
-        //     $table->date('data_matricula')->default(null)->change();
-        // });
+        Schema::dropIfExists('alunos');
+        Schema::table('alunos', function (Blueprint $table) {
+            $table->date('data_matricula')->default(null)->change();
+        });
     }
 };

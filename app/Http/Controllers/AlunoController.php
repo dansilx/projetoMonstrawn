@@ -53,19 +53,14 @@ class AlunoController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Aluno $aluno)
+    public function update(Request $request, string $id)
     {
-        $request->validate([
-            'nome' => 'required',
-            'email' => 'required',
-            'data_nascimento' => 'required',
-            'endereco' => 'required',
-            'telefone' => 'required',
-            'data_matricula' => 'required',
-        ]);
+
+        $aluno = Aluno::findOrFail($id);
 
         $aluno->update($request->all());
-        return redirect()->route('alunos.index')->with('success', 'Aluno atualizado!');
+
+        return redirect("/alunos");
     }
 
     /**
