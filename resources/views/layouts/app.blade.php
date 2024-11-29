@@ -45,7 +45,13 @@
                     <a class="nav-link" href="/alunos">Alunos</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/categoria">Professores</a>
+                    <a class="nav-link" href="/professors">Professores</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/planos">Planos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/matriculas">Matrículas</a>
                 </li>
             </ul>
             <ul class="navbar-nav ms-auto">

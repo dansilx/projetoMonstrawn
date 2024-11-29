@@ -2,7 +2,7 @@
     <div class="container mt-5">
         <h1 class="display-4">Nova Matrícula</h1>
 
-        <form action="{{ route('matriculas.store') }}" method="POST">
+        <form action="/matriculas" method="POST">
             @csrf
 
             <div class="form-group mb-3">
@@ -34,4 +34,11 @@
 
             <div class="form-group mb-3">
                 <label for="data_matricula">Data da Matrícula</label>
-                <input type="date" name="data_matricula" id="data_matricula" class="form-control"
+                <input type="date" name="data_matricula" id="data_matricula" class="form-control" required>
+            </div>
+
+            <button type="submit" class="btn btn-outline-secondary">Cadastrar</button>
+            <a href="/professors" class="btn btn-secondary">Voltar</a>
+        </form>
+    </div>
+</x-app-layout>

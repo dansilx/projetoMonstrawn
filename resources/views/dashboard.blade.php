@@ -10,19 +10,19 @@
       function drawChart() {
 
         var data = google.visualization.arrayToDataTable([
-          ['Alunos', 'Valor Médio dos Alunos da Academia'],
-          @foreach($alunos as $index => $aluno)
-            ["{{$aluno}}", {{$valores_medios[$index]}}]
+          ['Matriculas', 'Valor Médio da mensalidade de Alunos'],
+          @foreach($matriculas as $index => $matricula)
+            ["{{$matricula}}", {{$valores_medios[$index]}}]
           @endforeach
         ]);
 
         var options = {
-          title: 'Análise de Alunos e seu Valor Médio'
+          title: 'Análise de Matrículas e seu Valor Médio'
         };
 
         var chart = new google.visualization.PieChart(document.getElementById('piechart'));
 
-        chart.draw(data, options);
+       chart.draw(data, options);
       }
     </script>
 

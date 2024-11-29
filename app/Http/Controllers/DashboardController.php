@@ -3,29 +3,30 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;  
-use App\Models\Aluno;
+use Illuminate\Support\Facades\DB;
+use App\Models\Matricula;
 
 class DashboardController extends Controller
 {
-    public function gerarGrafico() 
+    public function gerarGrafico()
     {
-        /*$data = Aluno::select('professor_id', DB::raw('AVG(VALOR) AS valor_medio'))
+        $data = Matricula::select('aluno_id', DB::raw('AVG(valor) AS valor_medio'))
                         ->with('aluno')
-                        ->groupBy('professor_id')
+                        ->groupBy('aluno_id')
                         ->get();
 
-        $alunos = [];
+        $matriculas = [];
         $valores_medios = [];
 
-        foreach($datas as $linha)
+        foreach($data as $linha)
         {
-            $alunos[] = $linha->alunos->nome;
+            $matriculas[] = $linha->aluno->nome;
             $valores_medios[] = $linha->valor_medio;
-        }*/
+
+        }
 
         //return view('dashboard', compact('alunos', 'valores_medios'));
-        return view('dashboard');
+        return view('dashboard', compact('matriculas', 'valores_medios'));
 
     }
 }

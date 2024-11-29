@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Aluno;
+use App\Models\Professor;
+use App\Models\Plano;
 use App\Models\Matricula;
 use Illuminate\Http\Request;
 
@@ -13,7 +16,7 @@ class MatriculaController extends Controller
     public function index()
     {
         $matriculas = Matricula::with(['aluno', 'professor', 'plano'])->get();
-        return view('matricula.index', compact('matriculas'));
+        return view('matriculas.index', compact('matriculas'));
     }
 
     /**
@@ -24,7 +27,7 @@ class MatriculaController extends Controller
         $alunos = Aluno::all();
         $professores = Professor::all();
         $planos = Plano::all();
-        return view('matricula.create', compact('alunos', 'professores', 'planos'));
+        return view('matriculas.create', compact('alunos', 'professores', 'planos'));
     }
 
     /**
@@ -49,7 +52,7 @@ class MatriculaController extends Controller
      */
     public function show(Matricula $matricula)
     {
-        return view('matricula.show', compact('matricula'));
+        return view('matriculas.show', compact('matriculas'));
     }
 
     /**
@@ -60,7 +63,7 @@ class MatriculaController extends Controller
         $alunos = Aluno::all();
         $professores = Professor::all();
         $planos = Plano::all();
-        return view('matricula.edit', compact('matricula', 'alunos', 'professores', 'planos'));
+        return view('matriculass.edit', compact('matriculas', 'alunos', 'professores', 'planos'));
     }
 
     /**

@@ -13,7 +13,7 @@ class PlanoController extends Controller
     public function index()
     {
         $planos = Plano::all();
-        return view('plano.index', compact('planos'));
+        return view('planos.index', compact('planos'));
     }
 
     /**
@@ -21,7 +21,7 @@ class PlanoController extends Controller
      */
     public function create()
     {
-        return view('plano.create');
+        return view('planos.create');
     }
 
     /**
@@ -46,7 +46,7 @@ class PlanoController extends Controller
      */
     public function show(Plano $plano)
     {
-        return view('plano.show', compact('plano'));
+        return view('planos.show', compact('planos'));
     }
 
     /**
@@ -54,7 +54,7 @@ class PlanoController extends Controller
      */
     public function edit(Plano $plano)
     {
-        return view('plano.edit', compact('plano'));
+        return view('planos.edit', compact('planos'));
     }
 
     /**

@@ -2,7 +2,7 @@
     <div class="container mt-5">
         <h1 class="display-4">Matrículas</h1>
 
-        <a href="{{ route('matriculas.create') }}" class="btn btn-primary mb-3">Nova Matrícula</a>
+        <a href="/matriculas/create" class="btn btn-outline-secondary mb-3">Cadastrar Nova Matrícula</a>
 
         <table class="table">
             <thead>

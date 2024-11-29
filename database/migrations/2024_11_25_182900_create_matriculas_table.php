@@ -13,12 +13,17 @@ return new class extends Migration
     {
         Schema::create('matriculas', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('aluno_id')->constrained()->onDelete('cascade');
-            $table->foreignId('professor_id')->constrained()->onDelete('cascade');
-            $table->foreignId('plano_id')->constrained()->onDelete('cascade');
+            $table->unsignedBigInteger('aluno_id'); // Define a coluna aluno_id
+            $table->unsignedBigInteger('professor_id'); // Define a coluna professor_id
+            $table->unsignedBigInteger('plano_id'); // Define a coluna plano_id
             $table->date('data_matricula');
-            $table->string('status')->default('ativa'); 
+            $table->string('status')->default('ativa');
             $table->timestamps();
+
+            // Configuração das chaves estrangeiras
+            $table->foreign('aluno_id')->references('id')->on('alunos')->onDelete('restrict');
+            $table->foreign('professor_id')->references('id')->on('professors')->onDelete('restrict');
+            $table->foreign('plano_id')->references('id')->on('planos')->onDelete('restrict');
         });
     }
 
