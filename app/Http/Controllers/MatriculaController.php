@@ -25,9 +25,9 @@ class MatriculaController extends Controller
     public function create()
     {
         $alunos = Aluno::all();
-        $professores = Professor::all();
+        $professors = Professor::all();
         $planos = Plano::all();
-        return view('matriculas.create', compact('alunos', 'professores', 'planos'));
+        return view('matriculas.create', compact('alunos', 'professors', 'planos'));
     }
 
     /**

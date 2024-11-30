@@ -29,24 +29,18 @@ class ProfessorController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
-            'nome' => 'required|string|max:255',
-            'email' => 'required|email|unique:professors',
-            'especialidade' => 'required|string|max:255',
-            'data_admissao' => 'required|date',
-        ]);
 
         Professor::create($request->all());
 
-        return redirect()->route('professors.index')->with('success', 'Professor cadastrado com sucesso.');
-    }
+        return redirect('professors');
+    }   
 
     /**
      * Display the specified resource.
      */
     public function show(Professor $professor)
     {
-        return view('professors.show', compact('professor'));
+        return view('professors.show', compact('professors'));
     }
 
     /**
