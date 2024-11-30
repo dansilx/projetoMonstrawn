@@ -25,9 +25,9 @@ class MatriculaController extends Controller
     public function create()
     {
         $alunos = Aluno::all();
-        $professores = Professor::all();
+        $professors = Professor::all();
         $planos = Plano::all();
-        return view('matriculas.create', compact('alunos', 'professores', 'planos'));
+        return view('matriculas.create', compact('alunos', 'professors', 'planos'));
     }
 
     /**
@@ -35,16 +35,10 @@ class MatriculaController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
-            'aluno_id' => 'required|exists:alunos,id',
-            'professor_id' => 'required|exists:professores,id',
-            'plano_id' => 'required|exists:planos,id',
-            'data_matricula' => 'required|date',
-        ]);
 
         Matricula::create($request->all());
 
-        return redirect()->route('matriculas.index');
+        return redirect('/matriculas');
     }
 
     /**
@@ -52,7 +46,7 @@ class MatriculaController extends Controller
      */
     public function show(Matricula $matricula)
     {
-        return view('matriculas.show', compact('matriculas'));
+        return view('matriculas.show', compact('matricula'));
     }
 
     /**
@@ -61,26 +55,28 @@ class MatriculaController extends Controller
     public function edit(Matricula $matricula)
     {
         $alunos = Aluno::all();
-        $professores = Professor::all();
+        $professors = Professor::all();
         $planos = Plano::all();
-        return view('matriculass.edit', compact('matriculas', 'alunos', 'professores', 'planos'));
+        return view('matriculas.edit', compact('matricula', 'alunos', 'professors', 'planos'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Matricula $matricula)
+    public function update(Request $request, string $id)
     {
-        $request->validate([
-            'aluno_id' => 'required|exists:alunos,id',
-            'professor_id' => 'required|exists:professores,id',
-            'plano_id' => 'required|exists:planos,id',
-            'data_matricula' => 'required|date',
-        ]);
+        $matricula = Matricula::findOrFail($id);
+
+        // $request->validate([
+        //     'aluno_id' => 'required|exists:alunos,id',
+        //     'professor_id' => 'required|exists:professors,id',
+        //     'plano_id' => 'required|exists:planos,id',
+        //     'data_matricula' => 'required|date',
+        // ]);
 
         $matricula->update($request->all());
 
-        return redirect()->route('matriculas.index');
+        return redirect('/matriculas');
     }
 
     /**

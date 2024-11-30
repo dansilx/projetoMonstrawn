@@ -24,13 +24,13 @@
                         <td>{{ $matricula->data_matricula }}</td>
                         <td>{{ $matricula->status }}</td>
                         <td>
-                            <a href="/matriculas/{{$matricula->id}}" class="btn btn-info">Ver</a>
-                            <a href="{{ route('matriculas.edit', $matricula->id) }}" class="btn btn-warning">Editar</a>
-                            <form action="{{ route('matriculas.destroy', $matricula->id) }}" method="POST" class="d-inline">
+                            <a href="/matriculas/{{$matricula->id}}" class="btn btn-outline-info">Ver</a>
+                            <a href="/matriculas/{{ $matricula->id }}/edit" class="btn btn-outline-warning">Editar</a>
+                            {{-- <form action="{{ route('matriculas.destroy', $matricula->id) }}" method="POST" class="d-inline">
                                 @csrf
                                 @method('DELETE')
                                 <button type="submit" class="btn btn-danger">Deletar</button>
-                            </form>
+                            </form> --}}
                         </td>
                     </tr>
                 @endforeach
