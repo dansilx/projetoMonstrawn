@@ -32,7 +32,7 @@ class ProfessorController extends Controller
 
         Professor::create($request->all());
 
-        return redirect('/professors');
+        return redirect()->route('professors.index')->with('success', 'Professor cadastrado com sucesso.');
     }
 
     /**
@@ -40,7 +40,7 @@ class ProfessorController extends Controller
      */
     public function show(Professor $professor)
     {
-        return view('professors.show', compact('professor'));
+        return view('professors.show', compact('professors'));
     }
 
     /**
